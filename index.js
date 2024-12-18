@@ -45,6 +45,10 @@ async function connectDb() {
     console.log(`Server is now listening on localhost:${PORT}/`);
   });
 
+  app.get('/api/statuscheck', (req, res) => {
+    res.status(200).send("server is running :D");
+  });
+
 
   app.get('/api/items/allitems', async (req, res) => {
     try {
